@@ -40,7 +40,7 @@ namespace IISManagerCore.Controllers
                 }
 
 
-                //DirectoryEntry iis = new DirectoryEntry("IIS://localhost/W3SVC", "acer","wu199010");
+                //DirectoryEntry iis = new DirectoryEntry("IIS://localhost/W3SVC", "acer","wu******");
                 //if (iis != null)
                 //{
                 //    foreach (DirectoryEntry entry in iis.Children)
