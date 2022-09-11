@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,7 @@ namespace IISManagerCore.Common
 {
     public static class MyHttpContext
     {
-        public static IServiceProvider ServiceProvider;
-
+        public static IServiceProvider serviceProvider;
         static MyHttpContext()
         {
         }
@@ -18,8 +18,9 @@ namespace IISManagerCore.Common
         public static HttpContext Current
         {
             get
-            {
-                object factory = ServiceProvider.GetService(typeof(Microsoft.AspNetCore.Http.IHttpContextAccessor));
+            {    
+                //var factory2 = serviceProvider.GetService<IHttpContextAccessor>();
+                var factory = serviceProvider.GetService(typeof(IHttpContextAccessor));
 
                 HttpContext context = ((IHttpContextAccessor)factory).HttpContext;
                 return context;
