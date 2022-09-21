@@ -3,9 +3,10 @@
 }
 @model List<IISSiteEntity>
 
-<h2>IIS 网站管理</h2>
+<h2 style="text-align: center;">IIS 网站管理</h2>
 
-<table>
+<div class="table-responsive">
+<table  class="table  table-striped">
     <thead>
         <tr>
             <th>ID</th>
@@ -33,9 +34,9 @@
                 </td>
                 <td>@m.State</td>
                 <td>
-                    <input type="button" value="回收" onclick=" recycile('@(m.Pool)') " />
-                    <input type="button" value="关闭" onclick=" stop('@(m.Name)') " />
-                    <input type="button" value="删除" onclick=" del('@(m.Name)') " />
+                    <input type="button" class="btn btn-primary" value="回收" onclick=" recycile('@(m.Pool)') " />
+                    <input type="button" class="btn btn-secondary" value="关闭" onclick=" stop('@(m.Name)') " />
+                    <input type="button" class="btn btn-danger" value="删除" onclick=" del('@(m.Name)') " />
                 </td>
             </tr>
         }        
@@ -43,7 +44,7 @@
     @ViewBag.s
 
 </table>
-
+</div>
 
 @section Foot{
     <script>

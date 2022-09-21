@@ -11,12 +11,8 @@ namespace IISManagerCore.Controllers
 {
     public class DefaultController : Controller
     {
-        //
-        // GET: /Default/
-
         public ActionResult Index()
         {
-
             List<IISSiteEntity> list_site = new List<IISSiteEntity>();
             ServerManager iisManager = new ServerManager();
             foreach (var site in iisManager.Sites)//遍历网站
@@ -115,11 +111,8 @@ namespace IISManagerCore.Controllers
             return Content("1");
 
         }
-
-
         public ActionResult AddSite()
         {
-
             return View();
         }
 
@@ -136,7 +129,6 @@ namespace IISManagerCore.Controllers
 
             return View();
         }
-
 
         [HttpPost]
         public ActionResult DelSite(string siteName)
